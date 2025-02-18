@@ -38,8 +38,17 @@ namespace lab_04
     {
         private float x, y;
 
-        public float X { get => x; set => x = value; }
-        public float Y { get => y; set => y = value; }
+        public float X
+        {
+            get { return x; }
+            set { x = value; }
+        }
+
+        public float Y
+        {
+            get { return y; }
+            set { y = value; }
+        }
 
         public Vector2D(float x, float y)
         {
@@ -100,9 +109,24 @@ namespace lab_04
     {
         private float x, y, z;
 
-        public float X { get => x; set => x = value; }
-        public float Y { get => y; set => y = value; }
-        public float Z { get => z; set => z = value; }
+        public float X
+        {
+            get { return x; }
+            set { x = value; }
+        }
+
+        public float Y
+        {
+            get { return y; }
+            set { y = value; }
+        }
+
+        public float Z
+        {
+            get { return z; }
+            set { z = value; }
+        }
+
 
         public Vector3D(float x, float y, float z)
         {
