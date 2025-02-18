@@ -240,11 +240,11 @@ namespace lab_05
             Console.WriteLine("Vector 2D và 3D mặc định:");
             Console.WriteLine(a.ShowInfo());
             Console.WriteLine(b.ShowInfo());
-            Console.WriteLine("--------------------------------------------------"+"\n");
+            Console.WriteLine();
 
             foreach (IVector vector in vectors)
             {
-                Console.WriteLine("--------------------------------------------------");
+                Console.WriteLine();
                 Console.WriteLine("Thông tin "+vector.ShowInfo());
                 //Console.WriteLine($"Vector: {vector}");
                 Console.WriteLine($"Chiều dài: {Math.Round(vector.Length(),2)}");
@@ -277,7 +277,7 @@ namespace lab_05
                 {
                     Console.WriteLine("Không thể thực hiện các phép toán trên các vector có loại khác nhau.");
                 }
-                Console.WriteLine("--------------------------------------------------");
+                Console.WriteLine("");
                 Console.WriteLine();
             }
             // Sắp xếp danh sách các vector theo độ dài
