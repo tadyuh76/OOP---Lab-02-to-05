@@ -101,6 +101,7 @@ namespace lab_04
             float dotProduct = Dot(vec);
             float mod1 = Module();
             float mod2 = vec.Module();
+            if (mod1 == 0 || mod2 == 0) throw new InvalidOperationException("Không thể tính góc với vector không");
             return (float)Math.Acos(dotProduct / (mod1 * mod2));
         }
     }
@@ -184,6 +185,7 @@ namespace lab_04
             float dotProduct = Dot(vec);
             float mod1 = Module();
             float mod2 = vec.Module();
+            if (mod1 == 0 || mod2 == 0) throw new InvalidOperationException("Không thể tính góc với vector không");
             return (float)Math.Acos(dotProduct / (mod1 * mod2));
         }
     }
@@ -214,14 +216,42 @@ namespace lab_04
             Vector3D v4 = (Vector3D)vectors[3];
 
             Console.WriteLine("Toán tử trên v1 và v2:");
-            Console.WriteLine($"- Dot: {v1.Dot(v2)}");
-            Console.WriteLine($"- Angle: {v1.Angle(v2)} rad");
+            try
+            {
+                Console.WriteLine($"- Dot: {v1.Dot(v2)}");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+            try
+            {
+                Console.WriteLine($"- Angle: {v1.Angle(v2)} rad");
+            }
+            catch (Exception e) 
+            {
+                Console.WriteLine(e);
+            }
             Console.WriteLine($"- v1 Module: {v1.Module()}");
             Console.WriteLine($"- v2 Module: {v2.Module()}");
             Console.WriteLine("Add:");
-            v1.Add(v2).ShowInfo();
+            try
+            {
+                v1.Add(v2).ShowInfo();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
             Console.WriteLine("Sub:");
-            v1.Sub(v2).ShowInfo();
+            try
+            {
+                v1.Sub(v3).ShowInfo();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
             Console.WriteLine("Mul:");
             try
             {
@@ -234,19 +264,53 @@ namespace lab_04
             v1.Div(2).ShowInfo();
 
             Console.WriteLine("\nToán tử trên v3 và v4:");
-            Console.WriteLine($"- Dot: {v3.Dot(v4)}");
-            Console.WriteLine($"- Angle: {v3.Angle(v4)} rad");
+            try
+            {
+                Console.WriteLine($"- Dot: {v3.Dot(v4)}");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            try
+            {
+                Console.WriteLine($"- Angle: {v3.Angle(v4)} rad");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
             Console.WriteLine($"- v3 Module: {v3.Module()}");
             Console.WriteLine($"- v4 Module: {v4.Module()}");
             Console.WriteLine("Add:");
-            v3.Add(v4).ShowInfo();
+            try
+            {
+                v3.Add(v1).ShowInfo();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
             Console.WriteLine("Sub:");
-            v3.Sub(v4).ShowInfo();
+            try
+            {
+                v3.Sub(v4).ShowInfo();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
             Console.WriteLine("Mul:");
-            v3.Mul(v4).ShowInfo();
+            try
+            {
+                v3.Mul(v2).ShowInfo();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
             Console.WriteLine("Div:");
             v3.Div(2).ShowInfo();
         }
     }
-
 }
