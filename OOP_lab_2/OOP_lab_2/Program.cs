@@ -1,4 +1,4 @@
-﻿using System.Text;
+using System.Text;
 
 namespace OOP_lab_2
 {
@@ -128,10 +128,13 @@ namespace OOP_lab_2
                 {
 
                     double angle = vectors[i].AngleBetween(vectors[j]);
-                    if (angle == -1) {
-                        Console.WriteLine("Không thể tính góc giữa 2 vector");
-                    }    
-                    Console.WriteLine($"Góc giữa Vector {i} và Vector {j}: {angle} rad");
+                    if (angle == -1)
+                    {
+                        Console.WriteLine($"Không thể tính góc giữa 2 vector {i} và {j}.");
+                    }
+                    else { 
+                        Console.WriteLine($"Góc giữa Vector {i} và Vector {j}: {angle} rad");
+                    }
                    
                 }
             }
